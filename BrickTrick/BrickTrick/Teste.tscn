@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyqci7cxpey1c"]
+
+[ext_resource type="Script" path="res://Teste.gd" id="1_s7ro3"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_imwle"]
+_surfaces = [{
+"aabb": AABB(-1, -1, 0, 2, 2, 1e-05),
+"format": 1,
+"primitive": 3,
+"vertex_count": 3,
+"vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0)
+}, {
+"aabb": AABB(-1, -1, 0, 2, 2, 1e-05),
+"format": 1,
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 0)
+}, {
+"aabb": AABB(-1, -1, 0, 2, 2, 1e-05),
+"format": 4097,
+"index_count": 4,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 0)
+}, {
+"aabb": AABB(-1, -1, 0, 2, 2, 1e-05),
+"format": 1,
+"primitive": 3,
+"vertex_count": 3,
+"vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0)
+}]
+
+[node name="Teste" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_imwle")
+script = ExtResource("1_s7ro3")

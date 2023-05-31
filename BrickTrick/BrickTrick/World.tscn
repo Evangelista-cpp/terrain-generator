@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://0xpgis4y822r"]
+
+[ext_resource type="Script" path="res://World.gd" id="1_yr1ek"]
+[ext_resource type="PackedScene" uid="uid://bfocp82v8w24o" path="res://player.tscn" id="2_q5set"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uicng"]
+
+[sub_resource type="Sky" id="Sky_4u5a4"]
+sky_material = SubResource("ProceduralSkyMaterial_uicng")
+
+[sub_resource type="Environment" id="Environment_04sal"]
+background_mode = 2
+background_color = Color(0.462745, 0.462745, 0.462745, 1)
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_4u5a4")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="World" type="WorldEnvironment"]
+environment = SubResource("Environment_04sal")
+script = ExtResource("1_yr1ek")
+
+[node name="Player" parent="." instance=ExtResource("2_q5set")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.701279, 34.3268, 1.39379)
+
+[node name="Chunks" type="Node3D" parent="."]

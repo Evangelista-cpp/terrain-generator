@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfocp82v8w24o"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_vdqiw"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ux4ym"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_87jp0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70853"]
+transparency = 1
+albedo_color = Color(0.831373, 1, 0.145098, 0.145098)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v05n1"]
+material = SubResource("StandardMaterial3D_70853")
+size = Vector3(1.01, 1.01, 1.01)
+
+[node name="Player" type="CharacterBody3D"]
+collision_priority = 0.0
+floor_block_on_wall = false
+safe_margin = 0.05
+script = ExtResource("1_vdqiw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_ux4ym")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_87jp0")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.758095, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -5)
+
+[node name="BlockOutline" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.05591)
+visible = false
+mesh = SubResource("BoxMesh_v05n1")
