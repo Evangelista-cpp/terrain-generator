@@ -117,10 +117,10 @@ func create_face(i, x, y, z, texture_offset):
 	var uv_offset = texture_offset / Global.TEXTURE_ATLAS_SIZE + Vector2(1/64.0, 1/64.0)
 	var height = 0.9 / Global.TEXTURE_ATLAS_SIZE.y
 	var width = 0.9 / Global.TEXTURE_ATLAS_SIZE.x
-	var uv_a = uv_offset + Vector2(0, 0)
-	var uv_b = uv_offset + Vector2(0, height)
-	var uv_c = uv_offset + Vector2(width, height)
-	var uv_d = uv_offset + Vector2(width, 0)
+	var uv_a = uv_offset + Vector2(width, 0)
+	var uv_b = uv_offset + Vector2(width, height)
+	var uv_c = uv_offset + Vector2(0, height)
+	var uv_d = uv_offset + Vector2(0, 0)
 	st.add_triangle_fan([a, b, c], [uv_a, uv_b, uv_c])
 	st.add_triangle_fan([a, c, d], [uv_a, uv_c, uv_d])
 	
